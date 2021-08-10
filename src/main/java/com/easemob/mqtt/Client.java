@@ -13,10 +13,15 @@ public class Client extends Thread {
     private String[] topics;
     private volatile boolean shutdown;
     private MessageClient messageClient;
+    private Config config;
     /**
      * 启动线程个数
      */
     private int threadsCount;
+
+    public Client(Config config) {
+        this.config = config;
+    }
 
     /**
      * 生命周期初始化方法

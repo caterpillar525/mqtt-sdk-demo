@@ -3,9 +3,15 @@ package com.easemob.mqtt;
 /**
  * 主函数
  */
-public class ServerStarter {
+public class Main {
     public static void main(String[] args) throws InterruptedException {
-        Client client = new Client();
+        //创建配置类
+        Config config = new Config();
+        config.setAppClientId("YXA6hGwCB0UHSPOV1lp_SAClEQ")
+                .setAppClientSecret("YXA6BqIXJjAqnKF4pD3pNSj1VAWTq5E")
+                .setRestApi("https://api.cn1.mqtt.chat/app/gtsne0");
+        //实例化客户端
+        Client client = new Client(config);
         //订阅主题
         client.subscribe("myTopic1", "myTopic2");
         //设置消息回调
