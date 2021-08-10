@@ -31,7 +31,7 @@ public class MqttMessage {
     private String encoding;
 
     /**
-     * 是否保留消息，默认为false
+     * 是否保留消息
      */
     private int retain;
     /**
