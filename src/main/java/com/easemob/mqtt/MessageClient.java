@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Random;
 
 public class MessageClient {
-    public List<MqttMessage> pollMessage(String[] topics) {
+    public List<MqttMessage> pollMessage(String[] topics, Config config) {
+        //此处模拟去MQTT服务器获取消息，客户端将等待最多500条消息，或者500ms时间，来返回消息
+        String restapi = config.getRestApi() + "/openapi/rm/message/poll";
         List<MqttMessage> messages = new ArrayList<>(500);
         int size = 0;
         long start = System.currentTimeMillis();

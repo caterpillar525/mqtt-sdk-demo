@@ -62,7 +62,7 @@ public class Client extends Thread {
      */
     private List<MqttMessage> receiveMessage() {
         //有消息继续运行，没有消息阻塞线程
-        List<MqttMessage> messages = this.messageClient.pollMessage(this.topics);
+        List<MqttMessage> messages = this.messageClient.pollMessage(this.topics, config);
         return messages;
     }
 
